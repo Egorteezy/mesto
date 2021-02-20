@@ -1,0 +1,11 @@
+.info{
+display: flex;
+justify-content: center;
+align-content: center;
+}
+
+@media all and (max-width:899px) {
+    .info{
+        flex-direction: column;
+    }
+}

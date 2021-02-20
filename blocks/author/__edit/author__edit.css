@@ -1,0 +1,28 @@
+.author__edit{
+    width: 24px;
+    height: 24px;
+    background-color: #000;
+    border: 1px solid #FFF;
+    margin: 0;
+    box-sizing: border-box;
+    background: url(../../../images/edit.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right: -42px;
+    bottom: 8px;
+}
+
+.author__edit:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+@media all and (max-width:899px){
+    .author__edit{
+        width: 18px;
+        height: 18px;
+        right: -28px;
+        bottom: 6px;
+    }
+}

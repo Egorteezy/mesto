@@ -1,0 +1,6 @@
+@media all and (max-width:899px){
+    .author__block{
+        align-content: center;
+        align-self: center;
+    }
+}

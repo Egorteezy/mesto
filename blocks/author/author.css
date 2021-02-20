@@ -1,0 +1,12 @@
+.author{
+    display: flex;
+    align-self: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media all and (max-width:899px){
+    .author{
+        width: 100%;
+    }
+}
