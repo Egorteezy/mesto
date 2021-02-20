@@ -1,6 +1,6 @@
-const popup = document.querySelector('.popup');
-const popupOpenButton = document.querySelector('.author__edit');
-const popupCloseButton = document.querySelector('.popup__close');
+let popup = document.querySelector('.popup');
+let popupOpenButton = document.querySelector('.author__edit');
+let popupCloseButton = document.querySelector('.popup__close');
 
 function openPopup() {
     popup.classList.add('popup_opened')
@@ -13,10 +13,10 @@ function closePopup() {
 popupCloseButton.addEventListener('click', closePopup)
 
 //Находим форму в DOM
-const formElement = popup.querySelector('.popup__container')
+let formElement = popup.querySelector('.popup__container')
 // Находим поля формы в DOM
-const nameInput = formElement.querySelector('.popup__name')
-const jobInput = formElement.querySelector('.popup__profession')
+let nameInput = formElement.querySelector('.popup__name')
+let jobInput = formElement.querySelector('.popup__profession')
 
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
@@ -41,7 +41,7 @@ function formSubmitHandler (evt) {
 // он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', formSubmitHandler);
 
-const activeLikes = document.querySelectorAll('.element__like')
+let activeLikes = document.querySelectorAll('.element__like')
 for(let i=0; i < activeLikes.length; i++) {
     activeLikes[i].addEventListener('click', like)
   }

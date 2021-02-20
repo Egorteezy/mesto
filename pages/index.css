@@ -7,7 +7,6 @@
 @import url(../blocks/info/info.css);
 @import url(../blocks/info/__avatar/info__avatar.css);
 @import url(../blocks/author/author.css);
-/* @import url(../blocks/author/); */
 @import url(../blocks/author/__edit/author__edit.css);
 @import url(../blocks/author/__name/author__name.css);
 @import url(../blocks/author/__profession/author__profession.css);
@@ -27,10 +26,3 @@
 @import url(../blocks/popup/__profession/popup__profession.css);
 @import url(../blocks/popup/__save/popup__save.css);
 @import url(../blocks/popup/__close/popup__close.css);
-/* @import url();
-
-@import url();
-@import url();
-@import url();
-@import url();
-@import url(); */
