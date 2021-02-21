@@ -9,7 +9,3 @@
     opacity: 0.6;
     cursor: pointer;
 }
-
-.element__like-on{
-    background-image: url(../../../images/activeLike.png);
-}

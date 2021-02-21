@@ -8,9 +8,7 @@
     background: url(../../../images/edit.svg);
     background-repeat: no-repeat;
     background-position: center;
-    position: absolute;
-    right: -42px;
-    bottom: 8px;
+    margin: 37px 0 0 18px;
 }
 
 .author__edit:hover{
@@ -22,7 +20,6 @@
     .author__edit{
         width: 18px;
         height: 18px;
-        right: -28px;
-        bottom: 6px;
+        margin: 31px 0 0 10px;
     }
 }

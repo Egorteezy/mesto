@@ -11,6 +11,7 @@
     min-height: 50px;
     border-radius: 2px;
     border: none;
+    margin-bottom: 37px;
 }
 
 .popup__save:hover{
@@ -22,5 +23,6 @@
     .popup__save{
         width: 238px;
         min-height: 46px;
+        margin-bottom: 25px;
     }
 }

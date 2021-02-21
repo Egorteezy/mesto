@@ -46,5 +46,5 @@ for(let i=0; i < activeLikes.length; i++) {
     activeLikes[i].addEventListener('click', like)
   }
 function like(evt) {
-    evt.target.classList.toggle('element__like-on')
+    evt.target.classList.toggle('element__like_active')
 }
