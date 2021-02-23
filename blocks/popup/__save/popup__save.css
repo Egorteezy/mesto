@@ -19,6 +19,10 @@
     cursor: pointer;
 }
 
+.popup__save:active{
+    outline: none;
+}
+
 @media all and (max-width:600px) {
     .popup__save{
         width: 238px;

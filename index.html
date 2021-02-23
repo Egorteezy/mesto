@@ -12,73 +12,73 @@
     </header>
     <main>
         <section class="profile">
-            <div class="info">
-                <img src="./images/photo.jpg" alt="фото исследователя" class="info__avatar">
-                <div class="author">
-                    <div class="author__info">
-                        <h1 class="author__name">Жак-Ив Кусто </h1>
-                        <h2 class="author__profession">Исследователь океана</h2>
+            <div class="profile__info">
+                <img src="./images/photo.jpg" alt="фото исследователя" class="profile__avatar">
+                <div class="profile__author">
+                    <div class="profile__text">
+                        <h1 class="profile__name">Жак-Ив Кусто </h1>
+                        <p class="profile__profession">Исследователь океана</p>
                     </div>
-                        <button class="author__edit"></button>
+                        <button type="button" class="profile__edit"></button>
                     </div>
             </div>
-            <button class="profile__add-button"></button>
+            <button type="button" class="profile__add-button"></button>
         </section>
         <section class="elements">
-            <div class="element">
+            <article class="element">
                 <img src="./images/Karachaevsk.jpg" alt="Карачаевск" class="element__photo">
-                <div class="place-name">
-                    <h3 class="element__title">Карачаевск</h3>
-                    <img src="./images/like.svg" alt="like" class="element__like">
+                <div class="element__place-name">
+                    <h2 class="element__title">Карачаевск</h2>
+                    <button type="button" class="element__like">
                 </div>
-            </div>
-            <div class="element">
+            </article>
+            <article class="element">
                 <img src="./images/Elbrus.jpg" alt="Эльбрус" class="element__photo">
-                <div class="place-name">
-                    <h3 class="element__title">Гора Эльбрус</h3>
-                    <img src="./images/like.svg" alt="like" class="element__like">
+                <div class="element__place-name">
+                    <h2 class="element__title">Гора Эльбрус</h2>
+                    <button type="button" class="element__like">
                 </div>
-            </div>
-            <div class="element">
-                <img src="./images/Dombay.png" alt="Домбай" class="element__photo">
-                <div class="place-name">
-                    <h3 class="element__title">Домбай</h3>
-                    <img src="./images/like.svg" alt="like" class="element__like">
+            </article>
+            <article class="element">
+                <img src="./images/Dombay.jpg" alt="Домбай" class="element__photo">
+                <div class="element__place-name">
+                    <h2 class="element__title">Домбай</h2>
+                    <button type="button" class="element__like">
                 </div>
-            </div>
-            <div class="element">
+            </article>
+            <article class="element">
                 <img src="./images/Elbrus.jpg" alt="Эльбрус" class="element__photo">
-                <div class="place-name">
-                    <h3 class="element__title">Эльбрус</h3>
-                    <img src="./images/like.svg" alt="like" class="element__like">
+                <div class="element__place-name">
+                    <h2 class="element__title">Эльбрус</h2>
+                    <button type="button" class="element__like">
                 </div>
-            </div>
-            <div class="element">
-                <img src="./images/Dombay.png" alt="Домбай" class="element__photo">
-                <div class="place-name">
-                    <h3 class="element__title">Домбай</h3>
-                    <img src="./images/like.svg" alt="like" class="element__like">
+            </article>
+            <article class="element">
+                <img src="./images/Dombay.jpg" alt="Домбай" class="element__photo">
+                <div class="element__place-name">
+                    <h2 class="element__title">Домбай</h2>
+                    <button type="button" class="element__like">
                 </div>
-            </div>
-            <div class="element">
+            </article>
+            <article class="element">
                 <img src="./images/Karachaevsk.jpg" alt="Карачаевск" class="element__photo">
-                <div class="place-name">
-                    <h3 class="element__title">Карачаево-Черкессия</h3>
-                    <img src="./images/like.svg" alt="like" class="element__like">
+                <div class="element__place-name">
+                    <h2 class="element__title">Карачаево-Черкессия</h2>
+                    <button type="button" class="element__like">
                 </div>
-            </div>
+            </article>
         </section>
     </main>
     <footer class="footer">
         <p class="footer__text">&copy; 2020 Mesto Russia</p>
     </footer>
     <section class="popup">
-        <form class="popup__container">
-            <button class="popup__close"></button> 
+        <form class="popup__container" name="edit_profile">
+            <button type="button" class="popup__close"></button> 
             <h3 class="popup__title">Редактировать профиль</h3>
-            <input type="text" name="name" class="popup__name" value="Жак-Ив Кусто">
-            <input type="text" name="profession" class="popup__profession"value="Исследователь океана">
-            <button class="popup__save">Сохранить</button>
+            <input type="text" id="input_name" name="name" class="popup__name" value="">
+            <input type="text" id="input_prof" name="profession" class="popup__profession" value="">
+            <button type="submit" class="popup__save">Сохранить</button>
         </form>
     </section>
     <script src="./scripts/main.js"></script>

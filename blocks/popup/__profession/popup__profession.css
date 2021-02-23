@@ -1,15 +1,15 @@
 .popup__profession{
     color: #000;
     width: 358px;
-    min-height: 27px;
     border: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid rgb(0,0,0,0.2);
     font-family: Inter;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
     margin-bottom: 48px;
+    padding-bottom: 13px;
 }
 
 @media all and (max-width:600px) {

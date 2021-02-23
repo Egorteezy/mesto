@@ -6,8 +6,8 @@
     justify-self: flex-end;
     background-color: #000;
     border: 1px solid #FFF;
-    box-sizing: border-box;
     border-radius: 2px;
+    box-sizing: border-box;
     background: url(../../../images/Plus.svg);
     background-repeat: no-repeat;
     background-position: center;
@@ -21,7 +21,6 @@
 @media all and (max-width:899px){
     .profile__add-button{
         width: 282px;
-        min-height: 50px;
         margin-top: 36px;
     }
 }

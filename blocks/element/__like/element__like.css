@@ -2,10 +2,21 @@
     width: 22px;
     height: 19px;
     align-self: center;
-    /* background-image: url(../../../images/activeLike.png); */
+    background-color: #fff;
+    background-image: url(../../../images/like.svg);
+    border: none;
+    margin: auto 5px auto;
+    padding: 0;
+}
+.element__like:focus {
+    outline: none;
+}
+
+.element__like:active {
+    background-image: url(../../../../images/activeLike.png);
 }
 
 .element__like:hover{
-    opacity: 0.6;
+    opacity: 0.5;
     cursor: pointer;
 }

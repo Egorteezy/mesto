@@ -1,4 +1,4 @@
-.author__name{
+.profile__name{
     position: relative;
     font-family: Inter;
     font-style: normal;
@@ -10,7 +10,7 @@
 }
 
 @media all and (max-width:899px){
-    .author__name{
+    .profile__name{
         font-size: 27px;
         line-height: 33px;
         margin: 22px auto 0;

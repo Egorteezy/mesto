@@ -1,11 +1,11 @@
-.author{
+.profile__author{
     display: flex;
     align-self: flex-start;
     /* justify-content: center; */
 }
 
 @media all and (max-width:899px){
-    .author{
+    .profile__author{
         width: 100%;
         align-self: center;
         align-content: center;

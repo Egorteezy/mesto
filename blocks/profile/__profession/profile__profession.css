@@ -1,4 +1,4 @@
-.author__profession{
+.profile__profession{
     font-family: Inter;
     font-style: normal;
     font-weight: normal;
@@ -8,7 +8,7 @@
 }
 
 @media all and (max-width:899px){
-    .author__profession{
+    .profile__profession{
         margin: 14px auto 0;
         text-align: center;
         font-size: 14px;
