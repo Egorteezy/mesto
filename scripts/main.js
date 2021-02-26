@@ -88,6 +88,7 @@ const initialCards = [
           let placePhoto = newPlace.querySelector('.element__photo')
           placeTitle.textContent = titleInput.value
           placePhoto.src = photoInput.value
+          placePhoto.alt = titleInput.value
           container.prepend(newPlace)
           closePopupAdd()
           addActives()
@@ -107,13 +108,10 @@ const initialCards = [
           activeLikes[i].addEventListener('click', like) 
         } 
     
-  
     let openPic = document.querySelectorAll('.element__photo')
       for(let i=0; i < openPic.length; i++) {
         openPic[i].addEventListener('click', openPopupPic)
       }
-    
-
   }
 
   function like(evt) { 
@@ -122,10 +120,11 @@ const initialCards = [
   
   function openPopupPic(evt) {
     let popupImage = document.querySelector('.popup-pic__image')
-    popupImage.src = evt.target.src
+    popupImage.src = evt.target.src 
     popupPic.classList.add('popup-pic_opened')
     let cardTitle = evt.target.closest('.element').querySelector('.element__title').textContent
-    document.querySelector('.popup-pic_title').textContent = cardTitle
+    document.querySelector('.popup-pic__title').textContent = cardTitle
+    popupImage.alt = cardTitle
   }
   
   function closePopupPic() {
