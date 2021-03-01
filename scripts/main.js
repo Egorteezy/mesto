@@ -28,7 +28,7 @@
   const authorProf = document.querySelector('.profile__profession');
   const popupAdd = document.querySelector('.popup_type_card-add');
   const addPlaceButton = document.querySelector('.profile__add-button');
-  const popupAddCloseButton = document.querySelector('.popup__close_type__card-add');
+  const popupAddCloseButton = document.querySelector('.popup__close_type_card-add');
   const titleInput = popupAdd.querySelector('.popup__input_type_title');
   const photoInput = popupAdd.querySelector('.popup__input_type_photo');
   const deleteButton = document.querySelector('.element__delete');
