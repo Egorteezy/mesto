@@ -40,31 +40,32 @@
     <footer class="footer">
         <p class="footer__text">&copy; 2020 Mesto Russia</p>
     </footer>
-    <section class="popup">
+    <section class="popup popup_type_profile">
         <form class="popup__container" name="edit_profile">
-            <button type="button" class="popup__close"></button>
+            <button type="button" class="popup__close popup__close_type_profile"></button>
             <h3 class="popup__title">Редактировать профиль</h3>
-            <input type="text" id="input_name" name="name" class="popup__input" value="">
-            <input type="text" id="input_prof" name="profession" class="popup__input" value="">
-            <button type="submit" class="popup__save">Сохранить</button>
+            <input type="text" name="name" class="popup__input popup__input_type_name" value="" placeholder="Имя">
+            <input type="text" name="profession" class="popup__input popup__input_type_profession" value="" placeholder="Профессия">
+            <button type="submit" class="popup__save popup__save_type_profile">Сохранить</button>
         </form>
     </section>
-    <section class="popup-add">
-        <form class="popup-add__container" id="add_place" name="add_place">
-            <button type="button" class="popup-add__close"></button> 
-            <h3 class="popup-add__title">Новое место</h3>
-            <input type="text" id="input_title" name="title" class="popup-add__input" value="" placeholder="Название">
-            <input type="picture" id="input_picture" name="photo" class="popup-add__input" value="" placeholder="Ссылка на картинку" >
-            <button type="submit" class="popup-add__save">Создать</button>
+    <section class="popup popup_type_card-add">
+        <form class="popup__container" id="add_place" name="add_place">
+            <button type="button" class="popup__close popup__close_type__card-add"></button> 
+            <h3 class="popup__title">Новое место</h3>
+            <input type="text" name="title" class="popup__input popup__input_type_title" value="" placeholder="Название">
+            <input type="picture" name="photo" class="popup__input popup__input_type_photo" value="" placeholder="Ссылка на картинку" >
+            <button type="submit" class="popup__save popup__save_type_card-add">Создать</button>
         </form>
     </section>
-    <section class="popup-pic">
-        <div class="popup-pic__container">
-            <img src="#" alt="#" class="popup-pic__image">
-            <h2 class="popup-pic__title"></h2>
-            <button type="button" class="popup-pic__close"></button>
+    <section class="popup popup_type_image">
+        <div class="popup__container_type_image">
+            <img src="#" alt="#" class="popup__image">
+            <h2 class="popup__title_type_image"></h2>
+            <button type="button" class="popup__close popup__close_type_image"></button>
         </div>
     </section>
+    <script src="./scripts/initial-сards.js"></script>
     <script src="./scripts/main.js"></script>
   </body>
   </html>
