@@ -33,11 +33,26 @@ const popupPic = document.querySelector('.popup_type_image')
 
 function openPopup(popup) {
   popup.classList.add('popup_opened')
+  document.addEventListener('keydown',  (evt) => {escClosePopup(evt)})
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened')
 }
+
+function escClosePopup(evt) {
+  const popup = document.querySelector('.popup_opened')
+  if (evt.key === 'Escape') {
+    closePopup(popup)
+  }
+}
+
+// function overlayCloseProfile(evt) {
+//   const popup = document.querySelector('.popup__container')
+//   if(evt.target !== popup) {
+//     closePopup(popup)
+//   }
+// }
 
 function openPopupProfile() {
   nameInput.value = authorName.textContent
@@ -89,8 +104,11 @@ function openPopupPic(evt) {
   popupImage.alt = cardTitle
 }
 
+const closeProfile = document.querySelector('.popup__close_type_profile')
+
 document.querySelector('.profile__edit').addEventListener('click', openPopupProfile)
-document.querySelector('.popup__close_type_profile').addEventListener('click',  () => {closePopup(popupProfile)})
+closeProfile.addEventListener('click',  () => {closePopup(popupProfile)})
+// document.querySelector('.popup_opened').addEventListener('click', () => {overlayCloseProfile(evt)})
 popupProfile.addEventListener('submit', putNewProfile)
 document.querySelector('.profile__add-button').addEventListener('click', () => {openPopup(popupAdd)})
 document.querySelector('.popup__close_type_card-add').addEventListener('click', () => {closePopup(popupAdd)})

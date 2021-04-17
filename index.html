@@ -41,20 +41,32 @@
         <p class="footer__text">&copy; 2020 Mesto Russia</p>
     </footer>
     <section class="popup popup_type_profile">
-        <form class="popup__container popup__container_type_form" name="edit_profile">
+        <form class="popup__container popup__container_type_form form" name="edit_profile" novalidate >
             <button type="button" class="popup__close popup__close_type_profile"></button>
             <h3 class="popup__title">Редактировать профиль</h3>
-            <input type="text" name="name" class="popup__input popup__input_type_name" value="" placeholder="Имя">
-            <input type="text" name="profession" class="popup__input popup__input_type_profession" value="" placeholder="Профессия">
+            <div class="popup__input-container">
+                <input type="text" name="name" class="popup__input popup__input_type_name" value="" placeholder="Имя" required minlength="2" maxlength="40">
+                <span class="popup__span name-error"></span>
+            </div>
+            <div class="popup__input-container">
+                <input type="text" name="profession" class="popup__input popup__input_type_profession" value="" placeholder="Профессия" required minlength="2" maxlength="40">
+                <span class="popup__span profession-error"></span>
+            </div>
             <button type="submit" class="popup__save popup__save_type_profile">Сохранить</button>
         </form>
     </section>
     <section class="popup popup_type_card-add">
-        <form class="popup__container popup__container_type_form" id="add_place" name="add_place">
+        <form class="popup__container popup__container_type_form form" id="add_place" name="add_place" novalidate>
             <button type="button" class="popup__close popup__close_type_card-add"></button> 
             <h3 class="popup__title">Новое место</h3>
-            <input type="text" name="title" class="popup__input popup__input_type_title" value="" placeholder="Название">
-            <input type="picture" name="photo" class="popup__input popup__input_type_photo" value="" placeholder="Ссылка на картинку" >
+            <div class="popup__input-container">
+                <input type="text" name="title" class="popup__input popup__input_type_title" value="" placeholder="Название" required minlength="2" maxlength="40">
+                <span class="popup__span title-error"></span>
+            </div>
+            <div class="popup__input-container">
+                <input type="picture" name="photo" class="popup__input popup__input_type_photo" value="" placeholder="Ссылка на картинку" required minlength="2" maxlength="40">
+                <span class="popup__span photo-error"></span>
+            </div>
             <button type="submit" class="popup__save popup__save_type_card-add">Создать</button>
         </form>
     </section>
@@ -67,5 +79,6 @@
     </section>
     <script src="./scripts/initial-сards.js"></script>
     <script src="./scripts/main.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
   </html>

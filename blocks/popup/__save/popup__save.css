@@ -23,6 +23,13 @@
     outline: none;
 }
 
+.popup__save:disabled{
+    background-color: #fff;
+    opacity: 0.2;
+    border: 1px solid #000000;
+    color: #000000;
+}
+
 @media all and (max-width:600px) {
     .popup__save{
         width: 238px;
