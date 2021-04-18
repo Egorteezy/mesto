@@ -1,5 +1,3 @@
-// const formElement = document.querySelector('.form') 
-
 const showError = (formElement, inputElement, errorMessage) => {
   const errorElement = formElement.querySelector(`.${inputElement.name}-error`)
   inputElement.classList.add('popup__input_type_error')
@@ -37,11 +35,11 @@ const formValidation = (formElement) => {
     formElement.addEventListener('submit', (evt) => {
       evt.preventDefault()
     })
+    setEventListeners(formElement)
   })
-  setEventListeners(formElement)
 }
 
-formValidation(formElement)
+formValidation()
 
 const isInvalidInput = (inputList) => {
   return inputList.some((inputElement) => {

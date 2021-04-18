@@ -33,26 +33,29 @@ const popupPic = document.querySelector('.popup_type_image')
 
 function openPopup(popup) {
   popup.classList.add('popup_opened')
-  document.addEventListener('keydown',  (evt) => {escClosePopup(evt)})
+  document.addEventListener('keydown', escClosePopup)
+  popup.addEventListener('click', overlayCloseProfile)
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened')
+  document.removeEventListener('keydown', escClosePopup)
+  popup.removeEventListener('click', overlayCloseProfile)
 }
 
 function escClosePopup(evt) {
-  const popup = document.querySelector('.popup_opened')
+  const openPopup = document.querySelector('.popup_opened')
   if (evt.key === 'Escape') {
-    closePopup(popup)
+    closePopup(openPopup)
   }
 }
 
-// function overlayCloseProfile(evt) {
-//   const popup = document.querySelector('.popup__container')
-//   if(evt.target !== popup) {
-//     closePopup(popup)
-//   }
-// }
+function overlayCloseProfile(evt) {
+  const openPopup = document.querySelector('.popup_opened')
+    if (evt.target.classList.contains('popup')) {
+      closePopup(openPopup)
+    }
+}
 
 function openPopupProfile() {
   nameInput.value = authorName.textContent
@@ -108,7 +111,6 @@ const closeProfile = document.querySelector('.popup__close_type_profile')
 
 document.querySelector('.profile__edit').addEventListener('click', openPopupProfile)
 closeProfile.addEventListener('click',  () => {closePopup(popupProfile)})
-// document.querySelector('.popup_opened').addEventListener('click', () => {overlayCloseProfile(evt)})
 popupProfile.addEventListener('submit', putNewProfile)
 document.querySelector('.profile__add-button').addEventListener('click', () => {openPopup(popupAdd)})
 document.querySelector('.popup__close_type_card-add').addEventListener('click', () => {closePopup(popupAdd)})
