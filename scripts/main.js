@@ -60,6 +60,8 @@ function overlayCloseProfile(evt) {
 function openPopupProfile() {
   nameInput.value = authorName.textContent
   jobInput.value = authorProf.textContent
+  popupProfile.querySelectorAll('.popup__span').forEach((span) => {span.textContent = ''})
+  popupProfile.querySelectorAll('.popup__input').forEach((error) => {error.classList.remove('popup__input_type_error')})
   openPopup(popupProfile)
 }
 
