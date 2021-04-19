@@ -83,6 +83,7 @@ function addContaner(evt) {
   closePopup(popupAdd)
   photoInput.value = ''
   titleInput.value = ''
+  popupAdd.querySelector('.popup__save').setAttribute('disabled', '')
 }
 
 function addActives(newPlace) {
