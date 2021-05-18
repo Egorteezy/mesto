@@ -1,25 +1,31 @@
-const container = document.querySelector('.elements');
-const placeCardTemplate = container.querySelector('#placeCard');
-const placeCard = placeCardTemplate.content;
+ import { initialCards } from './initial-сards.js'
+ import { Card } from './Card.js'
+ import { FormValidator, validationConfig} from './FormValidator.js'
 
-function createCard(cardData) {
-  const newPlace = placeCard.querySelector('.element').cloneNode(true)
-  const placeTitle = newPlace.querySelector('.element__title')
-  const placePhoto = newPlace.querySelector('.element__photo')
-  placeTitle.textContent = cardData.name
-  placePhoto.src = cardData.link
-  placePhoto.alt = cardData.name
-  return newPlace
-}
+// const container = document.querySelector('.elements');
+// const placeCardTemplate = container.querySelector('#placeCard');
+// const placeCard = placeCardTemplate.content;
 
-function addCard(cardData) {
-  const newPlace = createCard(cardData)
-  container.prepend(newPlace)
-  addActives(newPlace)
-}
+// function createCard(cardData) {
+//   const newPlace = placeCard.querySelector('.element').cloneNode(true)
+//   const placeTitle = newPlace.querySelector('.element__title')
+//   const placePhoto = newPlace.querySelector('.element__photo')
+//   placeTitle.textContent = cardData.name
+//   placePhoto.src = cardData.link
+//   placePhoto.alt = cardData.name
+//   return newPlace
+// }
+
+// function addCard(cardData) {
+//   const newPlace = createCard(cardData)
+//   container.prepend(newPlace)
+//   addActives(newPlace)
+// }
+
+
 
 for(let i=0; i < initialCards.length; i++) {
-  addCard(initialCards[i])
+  new Card(initialCards[i], '#placeCard')
 }
 
 const popupProfile = document.querySelector('.popup_type_profile');
@@ -63,6 +69,7 @@ function openPopupProfile() {
   popupProfile.querySelectorAll('.popup__span').forEach((span) => {span.textContent = ''})
   popupProfile.querySelectorAll('.popup__input').forEach((error) => {error.classList.remove('popup__input_type_error')})
   openPopup(popupProfile)
+  new FormValidator(validationConfig, popupProfile)
 }
 
 function putNewProfile (evt) {
@@ -76,39 +83,41 @@ function addContaner(evt) {
   evt.preventDefault();
   const titleInput = popupAdd.querySelector('.popup__input_type_title')
   const photoInput = popupAdd.querySelector('.popup__input_type_photo')
-  addCard({
+  new Card({
     name: titleInput.value,
     link: photoInput.value
-  })
+  }, '#placeCard')
   closePopup(popupAdd)
   photoInput.value = ''
   titleInput.value = ''
   popupAdd.querySelector('.popup__save').setAttribute('disabled', '')
 }
 
-function addActives(newPlace) {
-  newPlace.querySelector('.element__delete').addEventListener('click', function() {
-    const elementItem = this.closest('.element')
-    elementItem.remove()
-  })
+const popupAddFormValidation = new FormValidator(validationConfig, popupAdd)
 
-  newPlace.querySelector('.element__like').addEventListener('click', like)
+// function addActives(newPlace) {
+//   newPlace.querySelector('.element__delete').addEventListener('click', function() {
+//     const elementItem = this.closest('.element')
+//     elementItem.remove()
+//   })
+
+//   newPlace.querySelector('.element__like').addEventListener('click', like)
   
-  newPlace.querySelector('.element__photo').addEventListener('click', openPopupPic)
-}
+//   newPlace.querySelector('.element__photo').addEventListener('click', openPopupPic)
+// }
 
-function like(evt) { 
-  evt.target.classList.toggle('element__like_active') 
-}
+// function like(evt) { 
+//   evt.target.classList.toggle('element__like_active') 
+// }
 
-function openPopupPic(evt) {
-  const popupImage = document.querySelector('.popup__image')
-  popupImage.src = evt.target.src 
-  openPopup(popupPic)
-  const cardTitle = evt.target.closest('.element').querySelector('.element__title').textContent
-  document.querySelector('.popup__title_type_image').textContent = cardTitle
-  popupImage.alt = cardTitle
-}
+// function openPopupPic(evt) {
+//   const popupImage = document.querySelector('.popup__image')
+//   popupImage.src = evt.target.src 
+//   openPopup(popupPic)
+//   const cardTitle = evt.target.closest('.element').querySelector('.element__title').textContent
+//   document.querySelector('.popup__title_type_image').textContent = cardTitle
+//   popupImage.alt = cardTitle
+// }
 
 const closeProfile = document.querySelector('.popup__close_type_profile')
 
