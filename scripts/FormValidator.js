@@ -19,8 +19,9 @@ export class FormValidator {
     this._inputInvalidClass = config.inputInvalidClass;
     this._buttonInvalidClass = config.buttonInvalidClass;
     this._button = this._form.querySelector(this._submitButtonSelector);
-    this._inputList = Array.from(this._form.querySelectorAll(this._inputSelector));
-    this._setEventListeners()
+    this._inputList = Array.from(
+      this._form.querySelectorAll(this._inputSelector)
+    );
   }
 
   _showError = (inputElement, errorMessage) => {
@@ -47,7 +48,7 @@ export class FormValidator {
     }
   };
 
-  _setEventListeners = () => {
+  setEventListeners = () => {
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
         this._isValid(inputElement);
