@@ -1,3 +1,5 @@
+import {openPopupPic} from "./popup.js"
+
 export class Card {
   constructor(cardData, cardSelector) {
     this._title = cardData.name;
@@ -33,7 +35,7 @@ export class Card {
       .addEventListener("click", this._like);
     this._element
       .querySelector(".element__photo")
-      .addEventListener("click", this._openPopupPic);
+      .addEventListener("click", openPopupPic);
   }
 
   _like(evt) {

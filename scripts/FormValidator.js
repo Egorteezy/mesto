@@ -7,6 +7,8 @@ export const validationConfig = {
   inputContainer: ".popup__input-container",
 };
 
+export const popupProfile = document.querySelector(".popup_type_profile");
+
 export class FormValidator {
   constructor(config, form) {
     this._form = form;
@@ -70,4 +72,20 @@ export class FormValidator {
       this._button.removeAttribute("disabled", "");
     }
   };
+
+  resetErrorMessages = (popup) => {
+    popup.querySelectorAll(".popup__span").forEach((span) => {
+      span.textContent = "";
+    });
+    popup.querySelectorAll(".popup__input").forEach((error) => {
+      error.classList.remove("popup__input_type_error");
+    });
+  }
+
+  clearFormClosed = (popup) => {
+    this._inputList.forEach((inputElement) => {
+      inputElement.value = ""
+    })
+    popup.querySelector(".popup__save").setAttribute("disabled", "");
+  }
 }
