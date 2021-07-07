@@ -39,8 +39,7 @@ export class Card {
   }
 
   _removeCard() {
-    this.closest(".element").remove()
-
+    this.closest('.element').remove()
   }
 
   _like(evt) {

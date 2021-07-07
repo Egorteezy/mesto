@@ -19,15 +19,13 @@ function openPopupProfile() {
   jobInput.value = authorProf.textContent;
   popupProfileFormValidation.resetErrorMessages(popupProfile)
   openPopup(popupProfile);
-  popupProfileFormValidation.setEventListeners();
 }
 
 function openPopupAdd() {
   openPopup(popupAdd);
-  popupAddFormValidation.setEventListeners();
 }
 
-function putNewProfile(evt) {
+function submitProfile(evt) {
   evt.preventDefault();
   authorName.textContent = nameInput.value;
   authorProf.textContent = jobInput.value;
@@ -51,9 +49,11 @@ function addContainer(evt) {
   popupAddFormValidation.clearFormClosed(popupAdd)
 }
 
+popupAddFormValidation.setEventListeners();
+popupProfileFormValidation.setEventListeners();
 document.querySelector(".profile__edit").addEventListener("click", openPopupProfile);
 closeProfile.addEventListener("click", () => {closePopup(popupProfile)});
-popupProfile.addEventListener("submit", putNewProfile);
+popupProfile.addEventListener("submit", submitProfile);
 document.querySelector(".profile__add-button").addEventListener("click", openPopupAdd);
 document.querySelector(".popup__close_type_card-add").addEventListener("click", () => {closePopup(popupAdd);});
 popupAdd.addEventListener("submit", addContainer);
