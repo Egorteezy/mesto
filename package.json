@@ -1,0 +1,40 @@
+{
+  "name": "mesto",
+  "version": "1.0.0",
+  "description": "В данной работе я продолжил изучать функии JS, и реализовал такие, как:\r 1. Создание блоков из массива с помощью template-элементов.\r 2. Создание блоков из данных, полученных от пользователя, с помощью template-элементов.\r 3. Форма ввода данных для реализации предыдущего пункта.\r 4. \"Лайк\" карточек.\r 5. Удаление карточек.\r 6. Получение данные элемента и использование их для вызова нового блока с этими данными.\r 7. Реализация плавного открытия и закрытия \"popup\"\r     Для реальзации работы были использованы изученные ранее методы постраения сетки страницы (flex, grid), а так же JavaScript для реальзации взаимодействия с посетителем сайта. \r     Внешний вид сайта сделан в соответсвии с макетом Figma. \r * [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)\r     Для того, что бы можно было посмотреть проект в деле, он размещен на бесплатном хостинге в GitHub Pages. \r *[Ссылка на GitHub Pages](https://egorteezy.github.io/mesto/index.html)",
+  "main": "babel.config.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Egorteezy/Mesto.git"
+  },
+  "keywords": [],
+  "author": "Egor Redkin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Egorteezy/Mesto/issues"
+  },
+  "homepage": "https://github.com/Egorteezy/Mesto#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "autoprefixer": "^10.3.1",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "css-loader": "^6.2.0",
+    "cssnano": "^5.0.7",
+    "html-webpack-plugin": "^5.3.2",
+    "i": "^0.3.6",
+    "mini-css-extract-plugin": "^2.1.0",
+    "postcss-loader": "^6.1.1",
+    "webpack": "^5.45.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "core-js": "^3.15.2"
+  }
+}
