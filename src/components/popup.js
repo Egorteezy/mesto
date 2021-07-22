@@ -48,7 +48,6 @@
     open() {
       this._popup.classList.add(this._openPopupClass)
       document.addEventListener('keydown', this._handleEscClose)
-      this.setEventListeners()
     }
 
     close() {

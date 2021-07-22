@@ -34,12 +34,9 @@ export default class Card {
     this._element
       .querySelector(".element__like")
       .addEventListener("click", this._like);
-      const openPopupPic = new PopupWithImage('.popup_type_image', '.popup__title_type_image', '.popup__image')
     this._element
       .querySelector(".element__photo")
-      .addEventListener("click", (evt) => {
-        openPopupPic.open(evt.target.alt, evt.target.src)
-      })
+      .addEventListener("click", this._handleCardClick)
   }
 
   _removeCard() {

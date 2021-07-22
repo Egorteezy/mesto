@@ -3,6 +3,7 @@ import Card from "../components/Card.js";
 import { FormValidator, validationConfig } from "../components/FormValidator.js";
 import Section from "../components/Section.js"
 import PopupWithForm from "../components/popupWithForm.js";
+import PopupWithImage from "../components/popupWithImage.js";
 import UserInfo from "../components/UserInfo.js";
 import '../pages/index.css';
 
@@ -20,6 +21,8 @@ const popupProfile = new PopupWithForm(
     popupProfile.close()
   }
 })
+
+popupProfile.setEventListeners()
 
 const initialCardList = new Section({
   renderer: (item) => {
@@ -49,18 +52,21 @@ const popupAdd = new PopupWithForm (
     }}
 )
 
+popupAdd.setEventListeners()
+
 function handleOpenCardAdd() {
   popupAdd.open()
 }
 
 
 function createCardElement(item) {
-  const card = new Card(item, "#placeCard");
+  const card = new Card(item, "#placeCard", (evt) => popupImage.open(evt.target.alt, evt.target.src));
   const cardElement = card.createCard();
   return cardElement
 }
 
-
+const popupImage = new PopupWithImage('.popup_type_image', '.popup__title_type_image', '.popup__image')
+popupImage.setEventListeners()
 
 initialCardList.renderItems(initialCards)
 
