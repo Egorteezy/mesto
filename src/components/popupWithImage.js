@@ -7,7 +7,7 @@ export default class PopupWithImage extends Popup {
         this._imageLink = document.querySelector(imageSelectorLink)
     }
 
-    open(name, link) {
+    open({name, link}) {
         this._imageName.textContent = name
         this._imageLink.src = link
         this._imageLink.alt = name

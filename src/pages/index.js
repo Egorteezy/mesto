@@ -56,11 +56,12 @@ popupAdd.setEventListeners()
 
 function handleOpenCardAdd() {
   popupAdd.open()
+  popupAddFormValidation.resetValidation()
 }
 
 
 function createCardElement(item) {
-  const card = new Card(item, "#placeCard", (evt) => popupImage.open(evt.target.alt, evt.target.src));
+  const card = new Card(item, "#placeCard", () => popupImage.open(item));
   const cardElement = card.createCard();
   return cardElement
 }
