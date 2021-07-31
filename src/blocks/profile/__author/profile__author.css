@@ -1,7 +1,6 @@
 .profile__author{
     display: flex;
     align-self: flex-start;
-    /* justify-content: center; */
 }
 
 @media all and (max-width:899px){

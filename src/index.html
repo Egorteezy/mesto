@@ -12,11 +12,16 @@
     <main>
       <section class="profile">
         <div class="profile__info">
-          <img
-            src="<%=require('./images/photo.jpg')%>"
-            alt="фото исследователя"
-            class="profile__avatar"
-          />
+          <button type="button" class="profile__avatar-button">
+            <div class="profile__avatar-edit-button-container">
+              <img class="profile__avatar-edit-button" src="<%=require('./images/edit-profile-button.svg')%>" alt="Кнопка Редактировать">
+            </div>
+            <img
+              src="<%=require('./images/photo.jpg')%>"
+              alt="фото исследователя"
+              class="profile__avatar"
+            />
+          </button>
           <div class="profile__author">
             <div class="profile__text">
               <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -33,7 +38,10 @@
             <img src="#" alt="#" class="element__photo" />
             <div class="element__place-name">
               <h2 class="element__title"></h2>
-              <button type="button" class="element__like"></button>
+              <div class="element__like-container">
+                <button type="button" class="element__like"></button>
+                <span class="element__like-counter"></span>
+              </div>
             </div>
             <button class="element__delete"></button>
           </article>
@@ -140,6 +148,60 @@
         ></button>
       </div>
     </section>
-    <!-- <script type="module" src="./pages/index.js"></script> -->
+    <section class="popup popup_type_avatar-add">
+      <form
+        class="popup__container popup__container_type_form form"
+        id="change_avatar"
+        name="change_avatar"
+        novalidate
+      >
+        <button
+          type="button"
+          class="popup__close popup__close_type_avatar-add"
+        ></button>
+        <h3 class="popup__title">Обновить аватар</h3>
+        <div class="popup__input-container">
+          <input
+            type="url"
+            name="avatar"
+            class="popup__input popup__input_type_avatar"
+            value=""
+            placeholder="Ссылка на картинку"
+            required
+          />
+          <span class="popup__span avatar-error"></span>
+        </div>
+        <button
+          type="submit"
+          class="popup__save popup__save_type_avatar-add"
+          disabled
+        >
+          Сохранить
+        </button>
+      </form>
+    </section>
+    <section class="popup popup_type_card-delete">
+      <div class="popup__container popup__container_type_form popup__container_type_card-delete">
+        <button
+          type="button"
+          class="popup__close"
+        ></button>
+        <form
+          class="form"
+          action="#"
+          method="POST"
+          name="delete_place"
+          novalidate
+        >
+          <h2 class="popup__title">Вы уверены?</h2>
+          <button
+            type="submit"
+            class="popup__save popup__agree"
+          >
+            Да
+          </button>
+        </form>
+      </div>
+    </section>
   </body>
 </html>

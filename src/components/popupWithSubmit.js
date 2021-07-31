@@ -1,28 +1,21 @@
 import Popup from "./popup.js";
 
-export default class PopupWithForm extends Popup {
+export default class PopupWithSubmit extends Popup {
     constructor(popupSelector, { submitFormCallback }, loadingText, defaultText) {
         super(popupSelector)
         this._selectorForm = this._popup.querySelector('.form')
-        this._submitButton = this._selectorForm.querySelector('.popup__save')
+        this._submitButton = this._selectorForm.querySelector('.popup__agree')
         this._submitFormCallback = submitFormCallback 
-        this._selectorInputs = '.popup__input'
         this._handleFormSubmit = this._handleFormSubmit.bind(this)
+        this._rederLoading = this._rederLoading.bind(this)
         this._submitLoadingText = loadingText
         this._defaultText = defaultText
     }
 
-    _getInputValues() {
-        this._inputList = this._selectorForm.querySelectorAll(this._selectorInputs)
-        this._formValues = {}
-        this._inputList.forEach((input) => (
-            this._formValues[input.name] = input.value
-        ))
-        return this._formValues
-    }
-
-    open() {
+    open(data, element) {
         super.open()
+        this._data = data
+        this._element = element
         this.setEventListeners()
     }
 
@@ -31,23 +24,23 @@ export default class PopupWithForm extends Popup {
         this._selectorForm.addEventListener('submit', this._handleFormSubmit)
     }
 
-    close() {
-        this._selectorForm.reset()
-        super.close()
-        this._renderLoading(false)
-    }
-
     _handleFormSubmit(evt) {
         evt.preventDefault()
-        this._renderLoading(true)
-        this._submitFormCallback(this._getInputValues())
+        this._rederLoading(true)
+        this._submitFormCallback(this._data, this._element)
+        
     }
 
-    _renderLoading(isLoading) {
+    _rederLoading(isLoading) {
         if(isLoading) {
             this._submitButton.textContent = this._submitLoadingText
         } else {
             this._submitButton.textContent = this._defaultText
         }
+    }
+
+    close() {
+        super.close()
+        this._rederLoading(false)
     }
 }
