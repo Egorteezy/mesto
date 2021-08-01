@@ -77,7 +77,7 @@ export class FormValidator {
     this._form.querySelectorAll(this._spanErrorMessage).forEach((span) => {
       span.textContent = "";
     });
-    this._form.querySelectorAll(this._inputSelector).forEach((error) => {
+    this._inputList.forEach((error) => {
       error.classList.remove(this._inputErrorSelector);
     });
   }
@@ -86,7 +86,7 @@ export class FormValidator {
     this._inputList.forEach((inputElement) => {
       inputElement.value = ""
     })
-    this._form.querySelector(this._submitButtonSelector).setAttribute("disabled", "");
+    this._button.setAttribute("disabled", "");
   }
 
   resetValidation = () => {
