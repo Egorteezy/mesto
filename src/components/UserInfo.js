@@ -3,6 +3,7 @@ export default class UserInfo {
         this._usernameElement = document.querySelector(usernameSelector)
         this._professionElement = document.querySelector(professionSelector)
         this._avatarElement = document.querySelector(avatarSelector)
+        this._id = ''
     }
 
     getUserInfo() {

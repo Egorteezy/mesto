@@ -2,7 +2,7 @@ export const validationConfig = {
   formSelector: ".form",
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__save",
-  inputErrorClass: "popup__input_type_error",
+  inputErrorSelector: "popup__input_type_error",
   spanErrorMessage: ".popup__span",
   inputContainer: ".popup__input-container",
 };
@@ -14,7 +14,7 @@ export class FormValidator {
     this._form = form;
     this._inputSelector = config.inputSelector;
     this._submitButtonSelector = config.submitButtonSelector;
-    this._inputErrorClass = config.inputErrorClass;
+    this._inputErrorSelector = config.inputErrorSelector;
     this._spanErrorMessage = config.spanErrorMessage;
     this._inputContainer = config.inputContainer;
 
@@ -30,7 +30,7 @@ export class FormValidator {
     const errorElement = inputElement
       .closest(this._inputContainer)
       .querySelector(this._spanErrorMessage);
-    inputElement.classList.add(this._inputErrorClass);
+    inputElement.classList.add(this._inputErrorSelector);
     errorElement.textContent = errorMessage;
   };
 
@@ -38,7 +38,7 @@ export class FormValidator {
     const errorElement = inputElement
       .closest(this._inputContainer)
       .querySelector(this._spanErrorMessage);
-    inputElement.classList.remove(this._inputErrorClass);
+    inputElement.classList.remove(this._inputErrorSelector);
     errorElement.textContent = "";
   };
 
@@ -74,11 +74,11 @@ export class FormValidator {
   };
 
   resetErrorMessages = () => {
-    this._form.querySelectorAll(".popup__span").forEach((span) => {
+    this._form.querySelectorAll(this._spanErrorMessage).forEach((span) => {
       span.textContent = "";
     });
-    this._form.querySelectorAll(".popup__input").forEach((error) => {
-      error.classList.remove("popup__input_type_error");
+    this._form.querySelectorAll(this._inputSelector).forEach((error) => {
+      error.classList.remove(this._inputErrorSelector);
     });
   }
 
@@ -86,7 +86,7 @@ export class FormValidator {
     this._inputList.forEach((inputElement) => {
       inputElement.value = ""
     })
-    this._form.querySelector(".popup__save").setAttribute("disabled", "");
+    this._form.querySelector(this._submitButtonSelector).setAttribute("disabled", "");
   }
 
   resetValidation = () => {

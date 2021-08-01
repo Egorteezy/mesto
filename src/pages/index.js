@@ -2,12 +2,12 @@
 import Card from "../components/Card.js";
 import { FormValidator, validationConfig } from "../components/FormValidator.js";
 import Section from "../components/Section.js"
-import PopupWithForm from "../components/popupWithForm.js";
-import PopupWithImage from "../components/popupWithImage.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import PopupWithImage from "../components/PopupWithImage.js";
 import UserInfo from "../components/UserInfo.js";
 import '../pages/index.css';
 import Api from "../components/Api.js"
-import PopupWithSubmit from "../components/popupWithSubmit.js";
+import PopupWithSubmit from "../components/PopupWithSubmit.js";
 
 // Объявляем константы
 const popupProfileForm = document.querySelector(".popup_type_profile");
@@ -15,8 +15,7 @@ const nameInput = document.querySelector(".popup__input_type_name");
 const jobInput = document.querySelector(".popup__input_type_profession");
 const popupAddForm = document.querySelector(".popup_type_card-add");
 const popupChangeAvatarForm = document.querySelector(".popup_type_avatar-add")
-const myId = 'e70276e52099a44ba9d6e5f4'
-
+let userId 
 // Создаем экземпляры классов
 const user = new UserInfo('.profile__name', '.profile__profession', '.profile__avatar')
 
@@ -85,6 +84,8 @@ const popupChangeAvatarValidation = new FormValidator(validationConfig, popupCha
 // Вешаем слушатели
 popupProfile.setEventListeners()
 popupAdd.setEventListeners()
+popupSubmit.setEventListeners()
+popupChangeAvatar.setEventListeners()
 popupAddFormValidation.setEventListeners();
 popupProfileFormValidation.setEventListeners();
 popupChangeAvatarValidation.setEventListeners()
@@ -108,7 +109,7 @@ function handleOpenCardAdd() {
 }
 
 function createCardElement(item) {
-  const card = new Card(item, "#placeCard", () => popupImage.open(item), handleLikeClick, handleOpenPopupDelete, myId);
+  const card = new Card(item, "#placeCard", () => popupImage.open(item), handleLikeClick, handleOpenPopupDelete, userId);
   const cardElement = card.createCard();
   return cardElement
 }
@@ -172,8 +173,8 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
     id: data._id,
   });
   user.setUserAvatar(data.avatar)
-
+  userId = data._id
   initialCards.reverse();
   initialCardList.renderItems(initialCards)
 })
-  
+.catch((error) => console.log(error))

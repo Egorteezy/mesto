@@ -53,7 +53,9 @@ export default class Card {
       .addEventListener("click", this._handleCardClick)
   }
 
-  // _removeCard() {
-  //   this.closest('.element').remove()
-  // }
+  updateLikes(data) {
+    likeButton.classList.remove("element__like_active");
+    likeCounter.textContent = data.likes.length;
+  }
+
 }

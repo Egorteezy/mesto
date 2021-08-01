@@ -1,4 +1,4 @@
-import Popup from "./popup.js";
+import Popup from "./Popup.js";
 
 export default class PopupWithSubmit extends Popup {
     constructor(popupSelector, { submitFormCallback }, loadingText, defaultText) {
@@ -16,7 +16,6 @@ export default class PopupWithSubmit extends Popup {
         super.open()
         this._data = data
         this._element = element
-        this.setEventListeners()
     }
 
     setEventListeners() {
